@@ -1,0 +1,2 @@
+# Cursor versus set-based
+The cursor fetches qualifying old pending orders one at a time and inserts one follow-up per loop. The set-based INSERT...SELECT expresses the same operation in one statement and is generally easier for SQL Server to optimize at scale. The measured milliseconds are only a local sample, not a universal benchmark. SQL Server views are stored queries and some simple views are updatable; MongoDB views are read-only aggregation pipeline definitions over source collections.

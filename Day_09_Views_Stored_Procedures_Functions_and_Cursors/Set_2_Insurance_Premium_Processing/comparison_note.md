@@ -1,0 +1,2 @@
+# Cursor versus set-based
+The cursor loops over overdue active policies, sets each to Lapsed and writes an audit row. The set-based UPDATE with OUTPUT captures every changed PolicyId and inserts the audit records as one set operation. Set-based SQL generally reduces row-by-row overhead. The view intentionally omits phone, national ID and date of birth. Renewal is transactional: validation, recalculation, policy update and audit insert either commit together or roll back.

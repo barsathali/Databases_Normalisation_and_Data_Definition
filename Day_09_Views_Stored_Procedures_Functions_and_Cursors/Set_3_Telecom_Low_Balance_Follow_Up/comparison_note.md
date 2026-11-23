@@ -1,0 +1,2 @@
+# Cursor versus set-based
+The cursor inserts one low-balance notification per prepaid subscriber through a fetch/loop. The set-based INSERT...SELECT inserts all matching rows in one statement and is generally preferable for bulk work. The timing values are only local measurements on a tiny sample. The prepaid views filter out postpaid subscribers; grant users access to the view and deny base-table access if this filter is intended as a security boundary.
